@@ -21,7 +21,6 @@ import ReactDOM from "react-dom";
 import PersonCard from './PersonCard'
 const styles = theme =>({
   aboutUsText:{
-    height:"400px",
     // alignContent:"center", 
     textAlign:"center",  
     verticalAlign: "middle",
@@ -55,7 +54,7 @@ render(){
   console.log("here")
 const {classes} =  this.props;
   return(
-    <div style={{height:1500, margin:"20px 20px 20px 40px"}} >
+    <div style={{height:1500, margin:"20px 20px 20px 20px"}} >
 
       <div className={classes.aboutUsText}>
       <Typography variant = "h2" color ="primary">
@@ -75,44 +74,46 @@ This project is designed and developed by a team of University of Melbourne stud
       </Typography>
       </div>
       
-      <div style ={{margin:"20px 0 0 0"}}>
+      <div style ={{margin:"20px"}}>
       <Grid container spacing={16}>
-      <Grid xs={4}>
+      <Grid md={6} lg={4}>
         <PersonCard
         name = {"Chenyang Lu"}
         role ={"Front-end Developer"}
-        Introduction = {["Front-end development and data visualization",  "chenyangl5@student.unimelb.edu.au"," https://www.linkedin.com/in/chenyang-lu-9ab85b148/2"]}
+        Introduction = {["Front-end development and data visualization",  "Chenyang is a Master of Information Technology student, currently working on his capstone project under the supervision of Prof. Rui Zhang. He is on the 2018 Engineering Dean's List"
+        ," https://www.linkedin.com/in/chenyang-lu-9ab85b148/"]}
         />
         </Grid>
-        <Grid xs={4}>
+        <Grid md={6} lg={4}>
         <PersonCard
         name = {"Echo Gu"}
         role ={"Data Analyst"}
-        Introduction = {["Data analytic and intepretation", "echo.echo@outlook.com","https://www.linkedin.com/in/echogu/"]}
+        Introduction = {["Data analytic and intepretation", "Echo is a Master of Data Science student, currently teaching senior Mathematics at Lauriston Girls’ School. She is responsible for the data analysis and scenario interpretation of this project.","https://www.linkedin.com/in/echogu/"]}
         />
         </Grid>
-        <Grid xs={4}>
+        <Grid md={6} lg={4}>
         <PersonCard
         name = {"Jing Du"}
         role ={"Database Administrator"}
-        Introduction = {["Database design and administration", "carina9308@gmail.com","https://github.com/Carina827"]}     
+        Introduction = {["Database design and administration", "Jing is a Master of Information Technology student. Her artificial intelligence project is one of the finalists in the 2018 competition. She is responsible for the database design and administration in this project.",
+        "https://github.com/Carina827"]}     
         />
         </Grid>
-        <Grid xs={4}>
+        <Grid md={6} lg={4}>
         <PersonCard
         name = {"Zhijia Lu"}
         role ={"Back-end Developer"}
-        Introduction = {["Twitter harvesting and back-end development",  "zhijial94@outlook.com","https://github.com/zhijia25"]}      
+        Introduction = {["Twitter harvesting and back-end development",  "Zhijia is a Master of Information Technology student, previously completed Bachelor of Mathematics at the University of Liverpool. He is responsible for back-end development and data harvesting in this project.","https://github.com/zhijia25"]}      
         />
         </Grid>
-        <Grid xs={4}>
+        <Grid md={6} lg={4}>
         <PersonCard
         name = {"Pengcheng Yao"}
         role ={"Architecture"}
-        Introduction = {["Architecture design and implementation",  "chenyangl5@student.unimelb.edu.au","https://github.com/LuChenyang3842"]}     
+        Introduction = {["Architecture design and implementation",  "Pengcheng is a Master of Information Technology student. His artificial intelligence project is one of the finalists in the 2018 competition. He is responsible for the architecture design and implementation of this project.","https://github.com/AndyYao17"]}     
         />
         </Grid>
-        <Grid xs={4}/>
+        <Grid md={6} lg={4}/>
     </Grid>
     </div>
     </div>

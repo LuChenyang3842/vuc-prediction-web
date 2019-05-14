@@ -34,7 +34,7 @@ import {retrunTable} from './processDisplayData'
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-        text: "Unemployment rate V.S. wrath twitter 2014",
+        text: "Wrath Twitter 2014 V.S. Unemployment Rate",
       fontSize: 26
       },
       axisX: {
@@ -59,7 +59,7 @@ import {retrunTable} from './processDisplayData'
         exportEnabled: true,
         theme: "light1", // "light1", "light2", "dark1", "dark2"
         title:{
-          text: "Unemployment rate V.S. wrath twitter 2015",
+          text: "Wrath Twitter 2014 V.S. Unemployment Rate",
         fontSize: 26
         },
         axisX: {
@@ -87,7 +87,7 @@ import {retrunTable} from './processDisplayData'
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-        text: "Unemployment rate V.S. wrath twitter 2016",
+        text: "Wrath Twitter 2014 V.S. Unemployment Rate",
       fontSize: 26
       },
       axisX: {

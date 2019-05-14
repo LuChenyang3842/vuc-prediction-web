@@ -72,12 +72,22 @@ render(){
                 <CardContent className ={classes.cardContent}>
                     <Typography variant = "body1" color ="primary">
                     <List dense= {true}>
-                        <ListItem>
+                    {this.props.currentPredictCrimeData > 0 && <ListItem>
                             Predicted Crime Rate : {this.props.currentPredictCrimeData}
-                        </ListItem>
-                        <ListItem>
-                            Predicted unemployment Rate: {this.props.currentPredictUnemploymentData}
-                        </ListItem>
+                        </ListItem>}
+                    {this.props.currentPredictCrimeData < 0 && <ListItem>
+                            Predicted Crime Rate : insufficient data
+                        </ListItem>}
+                    {this.props.currentPredictUnemploymentData > 0 && 
+                    <ListItem>
+                    Predicted Unemployment Rate: {this.props.currentPredictUnemploymentData}
+                    </ListItem>}
+
+                    {this.props.currentPredictUnemploymentData < 0 && 
+                    <ListItem>
+                    Predicted Unemployment Rate: insufficient data
+                    </ListItem>}
+
                 </List>
                 </Typography>
                 </CardContent>

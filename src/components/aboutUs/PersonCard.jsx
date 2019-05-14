@@ -23,7 +23,6 @@ import carina from '../../data/image/carina.jpg'
 const styles = theme =>({
   card:{
     width:"80%",
-    height:"450px",
     padding:"20px",
     margin:"25px",
     backgroundColor:"#eceff1",
