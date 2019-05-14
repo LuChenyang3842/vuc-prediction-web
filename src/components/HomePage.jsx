@@ -158,7 +158,7 @@ else{
         <Tabs value={value} onChange={this.handleChange}>
             <Tab label="Overview" />
             <Tab label="Historical Analysis" />
-            <Tab label="Predication" />
+            <Tab label="Prediction" />
             <Tab label="About Us" />
         </Tabs>
         </Toolbar>

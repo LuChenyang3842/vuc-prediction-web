@@ -64,7 +64,7 @@ render(){
                   }}>
                 <CardHeader title={
                 <Typography variant = "h5" color ="error">
-                        {this.props.cityName}
+                        {this.props.cityName.toUpperCase()}
                 </Typography>
                  } 
                  color="#fffff" />

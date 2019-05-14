@@ -34,15 +34,16 @@ import {retrunTable} from './processDisplayData'
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-        text: "Unemployment rate versues wrath twitter 2014",
+        text: "Unemployment rate V.S. wrath twitter 2014",
       fontSize: 26
       },
       axisX: {
         title: "unemployment rate(%)",
-      logarithmic: true
+      // logarithmic: true
       },
       axisY: {
-        title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter)"
+        title: "Wrath Twitter Ratio",
+        includeZero:false,
       },
       data: [{
         type: "bubble",
@@ -58,7 +59,7 @@ import {retrunTable} from './processDisplayData'
         exportEnabled: true,
         theme: "light1", // "light1", "light2", "dark1", "dark2"
         title:{
-          text: "Unemployment rate versues wrath twitter 2015",
+          text: "Unemployment rate V.S. wrath twitter 2015",
         fontSize: 26
         },
         axisX: {
@@ -66,7 +67,8 @@ import {retrunTable} from './processDisplayData'
         logarithmic: true
         },
         axisY: {
-          title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter)"
+          title: "Wrath Twitter Ratio",
+          includeZero:false,
         },
         data: [{
           type: "bubble",
@@ -85,7 +87,7 @@ import {retrunTable} from './processDisplayData'
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-        text: "Unemployment rate versues wrath twitter 2016",
+        text: "Unemployment rate V.S. wrath twitter 2016",
       fontSize: 26
       },
       axisX: {
@@ -93,7 +95,8 @@ import {retrunTable} from './processDisplayData'
       logarithmic: true
       },
       axisY: {
-        title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter)"
+        title: "Wrath Twitter Ratio",
+        includeZero:false,
       },
       data: [{
         type: "bubble",

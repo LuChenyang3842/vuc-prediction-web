@@ -31,15 +31,16 @@ export const crimeNtwitter2014 = (twitter,crime,unemployment) => {
     exportEnabled: true,
     theme: "light1", // "light1", "light2", "dark1", "dark2"
     title:{
-      text: "Wrath Twitter Ratio Versus Offence Rate 2014",
+      text: "Wrath Twitter Ratio V.S.  Offence Rate 2014",
     fontSize: 26
     },
     axisX: {
-      title: "Offence Rate per 100000 capital",
+      title: "Offence Rate per 100000 capita",
     logarithmic: true
     },
     axisY: {
-      title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter) "
+      title: "Wrath Twitter Ratio",
+      includeZero:false,
     },
     data: [{
       type: "bubble",
@@ -55,15 +56,16 @@ export const crimeNtwitter2014 = (twitter,crime,unemployment) => {
     exportEnabled: true,
     theme: "light1", // "light1", "light2", "dark1", "dark2"
     title:{
-      text: "Wrath Twitter Ratio Versus Offence Rate 2015",
+      text: "Wrath Twitter Ratio V.S. Offence Rate 2015",
     fontSize: 26
     },
     axisX: {
-      title: "Offence Rate per 100000 capital",
+      title: "Offence Rate per 100000 capita",
     logarithmic: true
     },
     axisY: {
-      title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter) "
+      title: "Wrath Twitter Ratio",
+      includeZero:false
     },
     data: [{
       type: "bubble",
@@ -79,15 +81,16 @@ export const crimeNtwitter2014 = (twitter,crime,unemployment) => {
     exportEnabled: true,
     theme: "light1", // "light1", "light2", "dark1", "dark2"
     title:{
-      text: "Wrath Twitter Ratio Versus Offence Rate 2016",
+      text: "Wrath Twitter Ratio V.S. Offence Rate 2016",
     fontSize: 26
     },
     axisX: {
-      title: "Offence Rate per 100000 capital",
+      title: "Offence Rate per 100000 capita",
     logarithmic: true
     },
     axisY: {
-      title: "Wrath Twitter Ratio (Wrath TWitter/Total Twitter) "
+      title: "Wrath Twitter Ratio",
+      includeZero:false,
     },
     data: [{
       type: "bubble",
