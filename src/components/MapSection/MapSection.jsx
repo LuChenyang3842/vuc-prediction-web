@@ -1,3 +1,14 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
 //Dependencies
 import React, {Component} from 'react';
 import {withStyles, FormControl,NativeSelect,InputBase} from '@material-ui/core';
@@ -45,10 +56,6 @@ const styles = theme => ({
     width: "1000px", 
     height:"600px",
     margin: "20px 10px 10px 10px", 
-    // borderStyle: "solid", 
-    // borderWidth: "3px", 
-    // borderColor: "primary.main", 
-    // borderRadius: 8
     boxShadow:"0 2px 8px 0 #d7d7d7"
   },
   colorBar:{
@@ -56,9 +63,7 @@ const styles = theme => ({
     position:"absolute",
     top: "490px",
     left:"890px", 
-    // height:"160px",
-    // width:"120px",
-    // backgroundColor:theme.palette.secondary.light,
+
   },
   infocard:{
     zIndex: 1300,
@@ -66,10 +71,6 @@ const styles = theme => ({
     top:"115px",
     left: "1050px",
     width:"400px",
-    // borderStyle: "solid", 
-    // borderWidth: "3px", 
-    // borderColor: "primary.main", 
-    // borderRadius: 8,
     boxShadow:"0 2px 8px 0 #d7d7d7"
   },
   root: {
@@ -127,8 +128,6 @@ export class MapSection extends Component {
 
 
     updatePolygon(map){
-        // const defineColorBasedOnCrimeRate = defineColorBasedOnCrimeRate
-        // const defineColorBasedOnEmployment = defineColorBasedOnEmployment;
         const year = this.state.year
         let twitterData = this.state.twitterData[year]
         let unempoymentData = this.state.unemploymentData
@@ -307,8 +306,8 @@ export class MapSection extends Component {
           >
             {/* <option value="" /> */}
             <option value="crime">Crime Heat Map</option>
-            <option value="twitter">Wrath Twitter Heat Map</option>
             <option value="unemployment">Unemployment Map</option>
+            <option value="twitter">Wrath Twitter Heat Map</option>
           </NativeSelect>
         </FormControl>
         </div>

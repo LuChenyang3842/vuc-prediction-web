@@ -1,8 +1,20 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
+
 //Dependencies
 import React , { Component } from 'react';
 import {withStyles, Paper} from '@material-ui/core';
 import CanvasJSReact from '../../lib/canvasjs.react'
-import {unemploymentNtwitter2014,unemploymentNtwitter2015,unemploymentNtwitter2016} from '../../data/charData/unemploymentAndTwitterCharData'
+import {unemploymentNtwitter2014,unemploymentNtwitter2015,unemploymentNtwitter2016} from '../../controllers/unemploymentAndTwitterCharData'
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -24,6 +36,7 @@ class UnemploymentChar extends Component{
       options2014:{},
       anchorEl: null,
       year:"2014",
+      loaded:false
     };
 }
 
@@ -36,11 +49,21 @@ handleClose = (year) => {
    year:year});
 };
 
+componentDidMount(){
+  const unemploymentNtwitter2014_new = unemploymentNtwitter2014(this.props.twitterData,this.props.crimeData,this.props.unemploymentData)
+  const unemploymentNtwitter2015_new = unemploymentNtwitter2015(this.props.twitterData,this.props.crimeData,this.props.unemploymentData)
+  const unemploymentNtwitter2016_new = unemploymentNtwitter2016(this.props.twitterData,this.props.crimeData,this.props.unemploymentData)
+  // console.log(unemploymentNtwitter2015_new)
+  this.setState({unemploymentNtwitter2014_new:unemploymentNtwitter2014_new,
+    unemploymentNtwitter2015_new:unemploymentNtwitter2015_new,
+    unemploymentNtwitter2016_new:unemploymentNtwitter2016_new,})
+}
 
 
 
 render() {
   const { anchorEl } = this.state;
+
   return (
   <div style ={{width:"80%", margin:"20px"}}>
      <Button
@@ -63,13 +86,13 @@ render() {
      <MenuItem onClick={() => this.handleClose("2016")}>2016</MenuItem>
    </Menu>
    <Paper>
-   {this.state.year === "2014" &&     <CanvasJSChart options = {unemploymentNtwitter2014}
+   {this.state.year === "2014" &&     <CanvasJSChart options = {this.state.unemploymentNtwitter2014_new}
       /* onRef={ref => this.chart = ref} */
     />   }
-      {this.state.year === "2015" &&     <CanvasJSChart options = {unemploymentNtwitter2015}
+      {this.state.year === "2015" &&     <CanvasJSChart options = {this.state.unemploymentNtwitter2015_new}
     /* onRef={ref => this.chart = ref} */
   />   }
-      {this.state.year === "2016" &&     <CanvasJSChart options = {unemploymentNtwitter2016}
+      {this.state.year === "2016" &&     <CanvasJSChart options = {this.state.unemploymentNtwitter2016_new}
     /* onRef={ref => this.chart = ref} */
   />   }
   </Paper>
@@ -79,7 +102,8 @@ render() {
 
  </div>
   );
+  }
 }
-}
+
 
 export default withStyles(styles)(UnemploymentChar);

@@ -1,17 +1,26 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
 //Dependencies
 import React , { Component } from 'react';
 import {withStyles,AppBar, Toolbar, IconButton, Typography, Button, Tabs, Tab, LinearProgress } from '@material-ui/core';
-// import {MenuIcon} from '@material-ui/icons/Menu';
 
 //UI
 import MapSection from './MapSection/MapSection'
 import DataVisualizationPage from './datavisualizationSection/DataVisualizationPage'
 import DataPredictionMap from './dataPrediction/DataPredictionMap'
 import AboutUs from './aboutUs/AboutUs'
+import logo from '../data/image/logo.png'
 
-// import AboutUs from './aboutUs/AboutUs'
 import {processCrimeData} from '../controllers/processCrimeData'
-// import TextMapSection from './TextMapSection'
 
 const styles = theme => ({
   root: {
@@ -51,35 +60,6 @@ componentWillUnmount() {
 }
 
 componentDidMount(){
-
-  // const requireData = require('require-data')
-
-  // const crimeData = new Promise(function (resolve, reject) {
-  //   var data = require('../data/api_crime_new.json')
-  //   resolve(data);
-  // });
-  // crimeData.then((data) => {
-  //   console.log(data)
-
-  //                 this.setState({
-  //                   crimeData: data['task']['value'],
-  //                   crimeDataLoaded: true
-  //             })
-  // })
-
-
-  // const unData = new Promise(function (resolve, reject) {
-  //   var data = require('../data/api_unemployment.json')
-  //   resolve(data);
-  // });
-  // unData.then((data) => {
-  //   console.log(data)
-  //                 this.setState({
-  //                   unemploymentData: data['task']['value'],
-  //                   unemploymentDataLoade: true
-  //             })
-  // })
-
 
   this.timer = setInterval(this.progress, 500);
   let twitterUrl = "http://172.26.37.33:8080/crimitter/api/tasks/twitter-all"
@@ -130,17 +110,6 @@ componentDidMount(){
           })
       })
     
-  //   const unData = new Promise(function (resolve, reject) {
-  //   var data = require('../data/supplymentary.json')
-  //   resolve(data);
-  // });
-  //  unData.then((data) => {
-  //   console.log(data)
-  //                 this.setState({
-  //                   supportingData: data['task']['value'],
-  //                   unemploymentDataLoade: true
-  //             })
-  // })
 
 }
 
@@ -183,12 +152,13 @@ else{
           VUC Prediction
           </Typography>
           {/* <Button color="inherit">About Us</Button> */}
+          {/* <img src={logo} style={{width:"80px", height:"80px"}}/> */}
         </Toolbar>
         <Toolbar variant="dense">
         <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Current Map" />
-            <Tab label="Data visualization" />
-            <Tab label="Crime and Unemployment Predication" />
+            <Tab label="Overview" />
+            <Tab label="Historical Analysis" />
+            <Tab label="Predication" />
             <Tab label="About Us" />
         </Tabs>
         </Toolbar>

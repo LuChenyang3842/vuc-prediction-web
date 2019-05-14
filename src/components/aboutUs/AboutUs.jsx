@@ -1,3 +1,17 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
+
+
+
 //Dependencies
 import React , { Component } from 'react';
 import {withStyles,Typography, Avatar,Card, CardHeader, CardContent,Grid} from '@material-ui/core';
@@ -7,7 +21,7 @@ import ReactDOM from "react-dom";
 import PersonCard from './PersonCard'
 const styles = theme =>({
   aboutUsText:{
-    height:"300px",
+    height:"400px",
     // alignContent:"center", 
     textAlign:"center",  
     verticalAlign: "middle",
@@ -51,10 +65,12 @@ const {classes} =  this.props;
       </Typography>
       <Typography variant = "h6" color ="primary">
       <div style={{marin:"0 auto", padding:"80px",textAlign:"center"}}>
-      This project aims to analyze the twitter post, unemployment rate and crime rate <br/>
-      in Victoria, Australia during the last 5 years (from 2014 to 2018) <br/>
-      And make a relatively accurate prediction of the crime and unemployment rate in Victoria in 2019. <br/>
-      The project is developed by 5 University of Melbourne students, detial information can be found below.
+      The Victoria Unemployment and Crime (VUC) Prediction project is designed to collect and analyze the twitter post located within Victoria,
+       Australia. Sentiment analysis is conducted on the harvested tweets to identify the ratio of wrath posts in each local government area.
+       rther development of regression model is used to identify the relationship between the ratio of wrath tweets and two social factors:
+        crime rate and unemployment rate, for years from 2014 to 2016. This model is used to predict future crime and unemployment rate in
+         each area based on the currently streaming collection of Twitter data.<br/> <br/>
+This project is designed and developed by a team of University of Melbourne students. Detailed information can be found below.
       </div>
       </Typography>
       </div>
@@ -64,36 +80,36 @@ const {classes} =  this.props;
       <Grid xs={4}>
         <PersonCard
         name = {"Chenyang Lu"}
-        role ={"Front End"}
-        Introduction = {["Responsible for Front-end Development in this project",  "chenyangl5@student.unimelb.edu.au"," https://www.linkedin.com/in/chenyang-lu-9ab85b148/2"]}
+        role ={"Front-end Developer"}
+        Introduction = {["Front-end development and data visualization",  "chenyangl5@student.unimelb.edu.au"," https://www.linkedin.com/in/chenyang-lu-9ab85b148/2"]}
         />
         </Grid>
         <Grid xs={4}>
         <PersonCard
         name = {"Echo Gu"}
-        role ={"Data Analytics"}
-        Introduction = {["Responsible for Data Analyze in this project", "echo.echo@outlook.com","https://www.linkedin.com/in/echogu/"]}
+        role ={"Data Analyst"}
+        Introduction = {["Data analytic and intepretation", "echo.echo@outlook.com","https://www.linkedin.com/in/echogu/"]}
         />
         </Grid>
         <Grid xs={4}>
         <PersonCard
         name = {"Jing Du"}
         role ={"Database Administrator"}
-        Introduction = {["Responsible for DataBase Development and Management in this project", "chenyangl5@student.unimelb.edu.au","https://github.com/Carina827"]}     
+        Introduction = {["Database design and administration", "chenyangl5@student.unimelb.edu.au","https://github.com/Carina827"]}     
         />
         </Grid>
         <Grid xs={4}>
         <PersonCard
         name = {"Zhijia Lu"}
-        role ={"Crawler"}
-        Introduction = {["Responsible for twitter crawler this project",  "zhijial94@outlook.com","https://github.com/zhijia25"]}      
+        role ={"Back-end Developer"}
+        Introduction = {["Twitter harvesting and back-end development",  "zhijial94@outlook.com","https://github.com/zhijia25"]}      
         />
         </Grid>
         <Grid xs={4}>
         <PersonCard
         name = {"Pengcheng Yao"}
         role ={"Architecture"}
-        Introduction = {["Architecture in this project",  "chenyangl5@student.unimelb.edu.au","https://github.com/LuChenyang3842"]}     
+        Introduction = {["Architecture design and implementation",  "chenyangl5@student.unimelb.edu.au","https://github.com/LuChenyang3842"]}     
         />
         </Grid>
         <Grid xs={4}/>

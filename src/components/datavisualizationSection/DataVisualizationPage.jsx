@@ -1,3 +1,15 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
+
 //Dependencies
 import React , { Component } from 'react';
 import {withStyles, Grid, Paper, ListItem , List, Divider,Typography  } from '@material-ui/core';
@@ -74,24 +86,20 @@ const {classes} =  this.props;
                     Summary Table
                     </p>
                     </ListItem>
-                    <li>
-                        <Divider variant="fullwidth" className ={{root:classes.divider}}/>
-                    </li>
 
-                    <ListItem  button onClick={()=>this.handleClick("predication")}>
-                    <Highlight/>
-                    <p style={{paddingLeft:"6px"}}>
-                    Prediction
-                    </p>
-                    <Divider/>
-                    </ListItem >
                 </List>
                 </Typography>
                 </Paper>
             </Grid>  
             <Grid item xs={10}>
-            {this.state.value === "crime" && <CrimeChart/>}
-            {this.state.value === 'unemployment' && <UnemploymentChart/>}
+            {this.state.value === "crime" && <CrimeChart
+                        twitterData = {this.props.twitterData}
+                        unemploymentData = {this.props.unemploymentData}
+                        crimeData = {this.props.crimeData}/>}
+            {this.state.value === 'unemployment' && <UnemploymentChart
+                        twitterData = {this.props.twitterData}
+                        unemploymentData = {this.props.unemploymentData}
+                        crimeData = {this.props.crimeData}/>}
             {this.state.value === 'table' && 
             <SummaryTable 
             twitterData = {this.props.twitterData}

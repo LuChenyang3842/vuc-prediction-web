@@ -1,3 +1,15 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
+
 //Dependencies
 import React, {Component} from 'react';
 import {withStyles,  FormControl,NativeSelect,InputBase} from '@material-ui/core';
@@ -5,7 +17,7 @@ import {withStyles,  FormControl,NativeSelect,InputBase} from '@material-ui/core
 
 
 //methods
-import {defineColorBasedOnCrimeRate,defineColorBasedOnEmployment} from '../../controllers/defineColorMethod'
+import {defineColorBasedOnCrimeRate,defineColorBasedOnEmployment} from '../../controllers/defineColorBasedOnPrediction'
 
 //UI
 import Map from '../Map';
@@ -105,18 +117,25 @@ const styles = theme => ({
 
 
 const crimeDataPrediction = (twitterData) =>{
+  const avg =  getAverageValue(twitterData)
+  const gradient =  (-Math.pow(10,-6) * avg * avg) + (411316*avg) -84157
+  const yIntercept = 64057 * avg + 371
   let crimeData = {}
   for(var key in twitterData){
-    crimeData[key] = twitterData[key] + 0.2
+    crimeData[key] = gradient * twitterData[key]  + yIntercept
   }
       
   return crimeData
 }
 
 const unemploymentPredication = (twitterData) =>{
+  const avg =  getAverageValue(twitterData)
+  console.log(avg)
+  const yIntercept = (-91.5 * avg) + 2.1
+console.log(yIntercept)
   let unemployment = {}
   for(var key in twitterData){
-    unemployment[key] = twitterData[key] + 0.3
+    unemployment[key] = (twitterData[key]*180) + yIntercept
   }
       
   return unemployment
@@ -126,10 +145,20 @@ const processTwitter = (twitter) => {
   let twitter2019 = twitter["2019"]
   let negativeTwitter2019 = {}
     for(var city in twitter2019){
-      negativeTwitter2019[city] = twitter2019[city]["negative_rate"]
+      negativeTwitter2019[city] =twitter2019[city]["negative_rate"]
     }
-  
+  console.log(negativeTwitter2019)
   return negativeTwitter2019
+}
+
+const getAverageValue  =(twitter2019) =>{
+  let sum = 0
+  let count = 0
+  for (var key in twitter2019){
+    sum = sum + twitter2019[key]
+    count = count +1
+  }
+  return sum/count
 }
 
 
@@ -156,8 +185,11 @@ export class DataPredictionMap extends Component {
 
     componentDidMount(){
       const twitter = processTwitter(this.props.twitterData)
-      const predictedCrimeData = unemploymentPredication(twitter)
-      const predictedUnemploymentData = crimeDataPrediction(twitter)
+      // console.log(twitter)
+      const predictedUnemploymentData = unemploymentPredication(twitter)
+      const predictedCrimeData = crimeDataPrediction(twitter)
+      console.log(predictedUnemploymentData)
+      console.log(predictedCrimeData)
       this.setState({
         predictedCrimeData:predictedCrimeData,
         predictedUnemploymentData:predictedUnemploymentData,
@@ -208,6 +240,8 @@ export class DataPredictionMap extends Component {
         );
         
         const clickListenerForEachCity = this.clickListenerForEachCity
+        const crimedata = this.state.predictedCrimeData
+        const UnemploymentData = this.state.predictedUnemploymentData
         map.data.addListener('click', function (event) {
             let cityName = event.feature.getProperty('vic_lga__3')
             clickListenerForEachCity(cityName)
@@ -225,6 +259,7 @@ export class DataPredictionMap extends Component {
         });
 
         this.updatePolygon(map)
+
     }
 
     clickListenerForEachCity = (cityName) =>{

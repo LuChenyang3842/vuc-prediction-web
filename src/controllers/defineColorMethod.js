@@ -1,7 +1,17 @@
+/*
+@This file is developed by Team 11 of COMP90024 of The University of Melbourne, under Apache Licence(see LICENCE). 
+ Researched Cities: Victoria, AU 
+ Team member - id: 
+ Chenyang Lu 951933
+ Echo Gu 520042
+ Pengcheng Yao	886326
+ Zhijia Lu 921715
+ Jing Du	77507
+*/
+
 export const defineColorBasedOnCrimeRate = (name, crimeData) => {
     if (crimeData.hasOwnProperty(name.toLowerCase())) {
         if (crimeData[name.toLowerCase()]["crime_ratio"] < 1000) {
-            console.log(crimeData[name.toLowerCase()]["crime_ratio"] )
             return "#cfd8dc"
         } else if (crimeData[name.toLowerCase()]["crime_ratio"] < 1500) {
             return "#90a4ae"
