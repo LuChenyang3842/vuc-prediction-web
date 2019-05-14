@@ -95,7 +95,7 @@ This project is designed and developed by a team of University of Melbourne stud
         <PersonCard
         name = {"Jing Du"}
         role ={"Database Administrator"}
-        Introduction = {["Database design and administration", "chenyangl5@student.unimelb.edu.au","https://github.com/Carina827"]}     
+        Introduction = {["Database design and administration", "carina9308@gmail.com","https://github.com/Carina827"]}     
         />
         </Grid>
         <Grid xs={4}>
