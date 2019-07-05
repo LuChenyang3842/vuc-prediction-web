@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Brief Introduction
+Full name of this project is victoria university 
 
 ## Available Scripts
 
